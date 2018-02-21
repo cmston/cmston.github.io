@@ -7,9 +7,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
-    function myfunction () {
-      document.getElementById ("heading").innerHTML = "Footie!!";
-    }
+function init() {
+ Tabletop.init( { key: ‘https://docs.google.com/spreadsheets/d/19N3cgEsXSWak5I_jUFfgwQ5RJd1Agzs2fllmesujX04/edit?usp=sharing',
+ callback: function(data, tabletop) { 
+ console.log(data)
+ },
+ simpleSheet: true } )
+}
+window.addEventListener(‘DOMContentLoaded’, init)
   </script>
 </head>
 <body>
