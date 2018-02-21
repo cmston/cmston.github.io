@@ -1,36 +1,11 @@
 <html lang="en">
 <head>
-  <title>Neutral</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>    
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19N3cgEsXSWak5I_jUFfgwQ5RJd1Agzs2fllmesujX04/edit?usp=sharing';
-
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
-
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
-
-  window.addEventListener('DOMContentLoaded', init)
-</script>
-<script>
-
-  $(document).ready(function(){
-    $("li").click(function(){
-        $("ggg").append(data[i].date);
-    });
-  </script>
-  
 </head>
 <body>
 
@@ -40,7 +15,7 @@
 
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">All upcoming</a></li>
-    <li><a data-toggle="tab" href="#menu1">Football</a></li>
+    <li><a onclick="myfunction()" data-toggle="tab" href="#menu1">Football</a></li>
     <li><a data-toggle="tab" href="#menu2">Rugby</a></li>
   </ul>
 
@@ -96,13 +71,93 @@
     </div>
     <div id="menu1" class="tab-pane fade">
            <h3>Football matches</h3>
-            <div class="ggg">
-              
-      </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Home</th>
+                  <th>Away</th>
+                  <th>Competition</th>
+                  <th>Date & Time</th>
+                  <th>Stadium</th>
+                  <th>Ticket Status</th>
+                  <th><!--ticketpurchase--></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Crystal Palace</td>
+                  <td>Watford</td>
+                  <td>Premier League</td>
+                  <td>Friday 23rd Feb, 19:00</td>
+                  <td><a href=#>Selhurst Park, SE25</a></td>
+                  <td>General sale available</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+                <tr>
+                  <td>England</td>
+                  <td>Wales</td>
+                  <td>Six Nations</td>
+                  <td>Saturday 24th Feb, 13:00</td>
+                  <td><a href="https://goo.gl/maps/rzjVABkzJKz" target="_blank">Twickenham, TW2</a></td>
+                  <td>Resale only</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+                <tr>
+                  <td>Chelsea</td>
+                  <td>Barcelona</td>
+                  <td>Champions League</td>
+                  <td>Saturday 24th Feb, 18:30</td>
+                  <td><a href="https://goo.gl/maps/rzjVABkzJKz" target="_blank">Stamford Bridge, SW6</a></td>
+                  <td>Members only, 3rd party resale</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+              </tbody>
+            </table>
     </div>
     <div id="menu2" class="tab-pane fade">
             <h3>Rugby matches</h3>
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3cUkJaCAnalPnQp8TL1hSzqjfdYjJ5-xFdRWshFM3OO2IGLCSgo86kVGTVqwr6KsOb_xOvvkpsj2p/pubhtml?widget=true&amp;headers=false"></iframe>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Home</th>
+                  <th>Away</th>
+                  <th>Competition</th>
+                  <th>Date & Time</th>
+                  <th>Stadium</th>
+                  <th>Ticket Status</th>
+                  <th><!--ticketpurchase--></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Crystal Palace</td>
+                  <td>Watford</td>
+                  <td>Premier League</td>
+                  <td>Friday 23rd Feb, 19:00</td>
+                  <td><a href=#>Selhurst Park, SE25</a></td>
+                  <td>General sale available</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+                <tr>
+                  <td>England</td>
+                  <td>Wales</td>
+                  <td>Six Nations</td>
+                  <td>Saturday 24th Feb, 13:00</td>
+                  <td><a href="https://goo.gl/maps/rzjVABkzJKz" target="_blank">Twickenham, TW2</a></td>
+                  <td>Resale only</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+                <tr>
+                  <td>Chelsea</td>
+                  <td>Barcelona</td>
+                  <td>Champions League</td>
+                  <td>Saturday 24th Feb, 18:30</td>
+                  <td><a href="https://goo.gl/maps/rzjVABkzJKz" target="_blank">Stamford Bridge, SW6</a></td>
+                  <td>Members only, 3rd party resale</td>
+                  <td><a href=#>BUY</a></td>
+                </tr>
+              </tbody>
+            </table>
     </div>
   </div>
 </div>
