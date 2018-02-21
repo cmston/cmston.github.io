@@ -23,12 +23,14 @@
 
   window.addEventListener('DOMContentLoaded', init)
 </script>
-  <script>
-  for (var i = 0; i < data.length; i++) {
-$(‘.ggg’).append(
-‘<h1>’ + data[i].date + ‘</h1>’+);
-}
+<script>
+
+  $(document).ready(function(){
+    $("li").click(function(){
+        $("ggg").append(data[i].date);
+    });
   </script>
+  
 </head>
 <body>
 
