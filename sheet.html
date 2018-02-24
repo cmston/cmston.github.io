@@ -1,112 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/sheetrock.css" rel="stylesheet" type="text/css">
-
-    <title>Sheetrock</title>
-
-  </head>
-
-
-          <div class="example-render-group">
-
-            <div class="example-render output" data-language="markup" data-example-class="operator-plus">
-              <table id="switch-hitters" class="table table-condensed table-striped"></table>
-            </div>
-
-            <script class="example-render" data-language="javascript" data-example-class="operator-equals">
-              // Load top ten switch hitters.
-              $('#switch-hitters').sheetrock({
-                url: mySpreadsheet,
-                query: "select A,B,C,D,E,L where E = 'Both' order by L desc",
-                fetchSize: 10
-              });
-            </script>
-
-          </div>
-
-          <p class="fiddle">
-            <a href="https://jsfiddle.net/7krs6q0q/">Show a jsFiddle for this example.</a>
-          </p>
-
-
-
-    <!-- Load Prism.js from CloudFlare’s CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
-
-    <!-- Load Bootstrap.js (for ScrollSpy) -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <!--
-      This has nothing to do with Sheetrock, but if you’re interested, here’s
-      how the examples on this page were generated. There’s no mockup code:
-      everything is generated from the actual code that runs on this page.
-    -->
-
-    <!-- Local helper code -->
-    <script>
-      /*
-       *  WE'LL DO IT LIVE!!!
-       *  Create source code examples using this page's actual content!
-       */
-      // Mirror the "source" of a content block in its own <pre><code> block.
-      var addCodeBlock = function () {
-        // Get attributes to be copied to container elements.
-        var language = $(this).data('language');
-        var classes = $(this).data('example-class');
-        // Create container tags.
-        var codeTag = $('<code></code>').text(cleanMargins($(this).html()));
-        var preTag = $('<pre></pre>').addClass('language-' + language).append(codeTag);
-        var containerTag = $('<div></div>').addClass(classes).append(preTag);
-        // Append.
-        var $parent = $(this).parent('.example-render-group');
-        if ($parent.length) {
-          $parent.before(containerTag);
-        } else {
-          $(this).before(containerTag);
-        }
-      };
-      // Clean up the margins and leading/trailing newlines.
-      var cleanMargins = function (str) {
-        var lines = str.replace(/^\n+/, '').replace(/[\n\t ]+$/, '').split(/\n/);
-        var firstLineIndent = lines[0].match(/^[\t ]+/);
-        if (firstLineIndent) {
-          firstLineIndent = new RegExp(firstLineIndent[0], 'g');
-          lines = $.map(lines, function (line) {
-            return line.replace(firstLineIndent, '');
-          });
-        }
-        return lines.join('\n');
-      };
-      // Show a jsFiddle when clicked.
-      var showFiddle = function () {
-        var $this = $(this);
-        var attributes = ' width="100%" height="400" allowfullscreen="allowfullscreen" frameborder="0"';
-        $this.before($('<iframe src="' + $this.attr('href') + 'embedded/"' + attributes + '></iframe>'));
-        $this.remove();
-        return false;
-      };
-      // Trim margins of specified content blocks.
-      $('.mockup').each(function () {
-        $(this).text(cleanMargins($(this).html()));
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.1/dist/sheetrock.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script>
+    var spreadsheet = "https://docs.google.com/spreadsheets/d/19N3cgEsXSWak5I_jUFfgwQ5RJd1Agzs2fllmesujX04/edit#gid=0";
+    
+    $(document).ready(function(){
+      $('#classes').sheetrock({
+        url: spreadsheet,
+  
       });
-      // Mirror "source" for specified tags.
-      $('.example-render').each(addCodeBlock);
-      // Show jsFiddles inline.
-      $('.fiddle a').on('click', showFiddle);
-    </script>
-
-    <div class="github">
-      <a href="https://github.com/chriszarate/sheetrock"><img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-    </div>
-
+    });
+  </script>
+  </head>
+  <body>
+    <table id="classes" class="table table-condensed table-striped"></table>
   </body>
-
 </html>
