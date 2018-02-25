@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html>
+
 <head>
   <title>Neutral Sports</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -7,32 +7,46 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script>
     var spreadsheet = "https://docs.google.com/spreadsheets/d/19N3cgEsXSWak5I_jUFfgwQ5RJd1Agzs2fllmesujX04/edit#gid=0";
-    
-    $(document).ready(function(){
+    $(document).ready(function() {
       $('#classes').sheetrock({
         url: spreadsheet,
-        query: "select A, B, C, D where B='Arsenal', 'Chelsea', 'Crystal Palace', 'West Ham'"
+        query: "select A, B, C, D where B='Home' or B='Arsenal' or B='Chelsea' or B='Crystal Palace' or B='West Ham'"
       });
     });
   </script>
+  <style>
+    .nav-pills {
+      padding-bottom: 15px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h2 id="heading">Neutral Fan</h2>
-  <p>A live sports database for fans of the game. See when the next local match is on near you.</p>
+  <div class="container">
+    <h2 id="heading">Neutral Fan</h2>
+    <p>A live sports database for fans of the game. See when the next local match is on near you.</p>
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Football</a></li>
-  </ul>
+    <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#home">London</a></li>
+    </ul>
 
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>Upcoming matches</h3>
-<table id="classes" class="table table-condensed table-striped"></table>
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Football</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <h3>Upcoming matches</h3>
+            <table id="classes" class="table table-condensed table-striped"></table>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
 
 </body>
+
 </html>
