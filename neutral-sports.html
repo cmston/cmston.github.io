@@ -2,23 +2,7 @@
 
 <head>
   <title>Neutral Sports</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.1/dist/sheetrock.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script>
-    var spreadsheet = "https://docs.google.com/spreadsheets/d/19N3cgEsXSWak5I_jUFfgwQ5RJd1Agzs2fllmesujX04/edit#gid=0";
-    $(document).ready(function() {
-      $('#classes').sheetrock({
-        url: spreadsheet,
-        query: "select A, B, C, D, E where C='Arsenal' or C='Chelsea' or C='Crystal Palace' or C='West Ham' or C='Fulham' or C='Millwall' or C='Queens Park Rangers' order by A"
-      });
-    });
-  </script>
-  <style>
-    .nav-pills {
-      padding-bottom: 15px;
-    }
-  </style>
 </head>
 
 <body>
@@ -43,8 +27,8 @@
 
         <div class="tab-content">
           <div id="home" class="tab-pane fade in active">
-            <h3>Upcoming matches</h3>
-            <table id="classes" class="table table-condensed table-striped"></table>
+
+            <iframe class="airtable-embed" src="https://airtable.com/embed/shrBZiH9ik9Q87SuF?backgroundColor=cyan&layout=card" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
           </div>
         </div>
       </div>
